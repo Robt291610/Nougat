@@ -1,25 +1,25 @@
 package com.nougat.domain.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-
+import lombok.*;
+import org.hibernate.annotations.UuidGenerator;
 import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@ToString
+@Table(name = "addresses")
+@Getter
+@Setter
+@ToString(exclude = "user")
 @Entity
-public class Addresses {
+public class Address {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
+    @UuidGenerator
     private UUID addressId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 

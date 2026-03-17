@@ -1,25 +1,29 @@
 package com.nougat.domain.entities;
 
 import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
+@Entity
+@Getter
+@Setter
+@Table(name = "inventory")
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString(exclude = "product")
 public class Inventory {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
-    private Products productId;
+    private UUID productId;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
+    @JoinColumn(name = "product_id")
+    private Products product;
 
     private Integer quantity;
     private LocalDateTime lastUpdated;
-
 }
-/*
-* CREATE TABLE inventory (
-    product_id BIGINT PRIMARY KEY,
-    quantity INT NOT NULL,
-    last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-    FOREIGN KEY (product_id) REFERENCES products(id)
-);*/

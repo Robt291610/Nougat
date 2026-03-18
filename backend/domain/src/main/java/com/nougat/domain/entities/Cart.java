@@ -1,13 +1,11 @@
 package com.nougat.domain.entities;
 
+import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,11 +14,7 @@ import java.util.UUID;
 @Setter
 @ToString(exclude = "user")
 @Entity
-public class Cart {
-    @Id
-    @GeneratedValue
-    @UuidGenerator
-    private UUID cartId;
+public class Cart extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)

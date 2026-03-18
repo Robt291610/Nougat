@@ -1,11 +1,9 @@
 package com.nougat.domain.entities;
 
+import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
-
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 @Getter
@@ -13,12 +11,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
-public class User {
-
-    @Id
-    @GeneratedValue
-    @UuidGenerator
-    private UUID userId;
+public class User extends BaseEntity {
 
     @Column(nullable = false, length = 100)
     private String name;

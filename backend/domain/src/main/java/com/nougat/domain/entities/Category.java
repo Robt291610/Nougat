@@ -1,22 +1,15 @@
 package com.nougat.domain.entities;
-
-
+import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
-
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter @Setter
+@Table(name = "category")
 @ToString(exclude = {"parentCategory", "subCategories"})
 @Entity
-public class Category {
-    @Id
-    @GeneratedValue
-    @UuidGenerator
-    private UUID categoryId;
+public class Category extends BaseEntity {
 
     private String categoryName;
 

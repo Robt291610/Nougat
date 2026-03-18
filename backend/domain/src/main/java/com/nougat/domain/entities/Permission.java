@@ -1,12 +1,8 @@
 package com.nougat.domain.entities;
 
+import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
-
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,11 +10,7 @@ import java.util.UUID;
 @Setter
 @ToString
 @Entity
-public class Permission {
-    @Id
-    @GeneratedValue
-    @UuidGenerator
-    private UUID permissionId;
+public class Permission extends BaseEntity {
 
     private String permissionName;
     private String permissionDescription;

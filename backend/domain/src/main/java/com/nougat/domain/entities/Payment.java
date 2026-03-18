@@ -1,13 +1,11 @@
 package com.nougat.domain.entities;
 
+import com.nougat.domain.common.BaseEntity;
 import com.nougat.domain.constants.PaymentMethod;
 import com.nougat.domain.constants.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
-
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,11 +13,7 @@ import java.util.UUID;
 @Setter
 @ToString(exclude = "order")
 @Entity
-public class Payment {
-    @Id
-    @GeneratedValue
-    @UuidGenerator
-    private UUID paymentId;
+public class Payment extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)

@@ -1,11 +1,9 @@
 package com.nougat.domain.entities;
 
+import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
-
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 @Getter
@@ -14,10 +12,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(exclude = "product")
-public class Inventory {
-
-    @Id
-    private UUID productId;
+public class Inventory extends BaseEntity {
 
     @OneToOne(fetch = FetchType.LAZY)
     @MapsId

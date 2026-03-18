@@ -1,12 +1,10 @@
 package com.nougat.domain.entities;
 
 
+import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
-
 import java.util.Set;
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,12 +12,8 @@ import java.util.UUID;
 @Setter
 @ToString
 @Entity
-public class Role {
+public class Role extends BaseEntity {
 
-    @Id
-    @GeneratedValue
-    @UuidGenerator
-    private UUID roleId;
 
     private String roleName;
     private String roleDescription;

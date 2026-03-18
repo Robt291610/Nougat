@@ -1,5 +1,6 @@
-package com.nougat.domain.entities;
+package com.nougat.domain.auth;
 
+import com.nougat.domain.entities.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,7 +13,7 @@ import java.util.UUID;
 @Setter
 @ToString(exclude = "user")
 @Entity
-public class RefreshTokens {
+public class RefreshToken {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID TokenId;

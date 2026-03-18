@@ -1,23 +1,17 @@
 package com.nougat.domain.entities;
 
+import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "addresses")
+@Table(name = "address")
 @Getter
 @Setter
 @ToString(exclude = "user")
 @Entity
-public class Address {
-
-    @Id
-    @GeneratedValue
-    @UuidGenerator
-    private UUID addressId;
+public class Address extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)

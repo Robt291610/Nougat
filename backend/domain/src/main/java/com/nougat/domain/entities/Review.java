@@ -1,10 +1,8 @@
 package com.nougat.domain.entities;
 
+import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
-
-import java.util.UUID;
 
 @Entity
 @Getter
@@ -12,12 +10,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(exclude = {"user", "product"})
-public class Review {
-
-    @Id
-    @GeneratedValue
-    @UuidGenerator
-    private UUID reviewId;
+public class Review extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)

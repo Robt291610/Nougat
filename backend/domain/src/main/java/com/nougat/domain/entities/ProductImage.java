@@ -1,10 +1,8 @@
 package com.nougat.domain.entities;
 
+import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
-
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,11 +10,7 @@ import java.util.UUID;
 @Setter
 @ToString(exclude = "products")
 @Entity
-public class ProductImage {
-    @Id
-    @GeneratedValue
-    @UuidGenerator
-    private UUID id;
+public class ProductImage extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     //@JoinColumn(name = "product_id")

@@ -1,16 +1,13 @@
 package com.nougat.domain.entities;
 
 
+import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
-import org.springframework.stereotype.Service;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
 
 @Entity
 @Getter
@@ -18,12 +15,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(exclude = "categories")
-public class Products {
-
-    @Id
-    @GeneratedValue
-    @UuidGenerator
-    private UUID productId;
+public class Products extends BaseEntity {
 
     @Column(nullable = false)
     private String productName;

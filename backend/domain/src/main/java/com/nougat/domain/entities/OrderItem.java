@@ -1,24 +1,18 @@
 package com.nougat.domain.entities;
 
+import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
-
 import java.math.BigDecimal;
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "order_item")
 @Getter
 @Setter
 @ToString(exclude = {"order", "product"})
 @Entity
-public class OrderItem {
-
-    @Id
-    @GeneratedValue
-    @UuidGenerator
-    private UUID orderItemId;
+public class OrderItem extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")

@@ -1,11 +1,10 @@
 package com.nougat.domain.auth;
 
+import com.nougat.domain.common.BaseEntity;
 import com.nougat.domain.entities.User;
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,15 +12,17 @@ import java.util.UUID;
 @Setter
 @ToString(exclude = "user")
 @Entity
-public class RefreshToken {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID TokenId;
+public class RefreshToken extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @Column(nullable = false, unique = true, length = 500)
     private String token;
+
+    @Column(nullable = false)
     private LocalDateTime expiryDate;
+
+    private boolean revoked;
 }

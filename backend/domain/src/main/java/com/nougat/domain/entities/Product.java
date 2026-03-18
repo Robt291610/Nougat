@@ -15,7 +15,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(exclude = "categories")
-public class Products extends BaseEntity {
+public class Product extends BaseEntity {
 
     @Column(nullable = false)
     private String productName;

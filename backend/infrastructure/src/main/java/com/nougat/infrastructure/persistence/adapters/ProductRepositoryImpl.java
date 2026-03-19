@@ -4,6 +4,8 @@ import com.nougat.domain.entities.Product;
 import com.nougat.domain.repository.ProductRepository;
 import com.nougat.infrastructure.persistence.repositories.JpaProductRepository;
 
+import java.util.List;
+
 public class ProductRepositoryImpl  implements ProductRepository {
 
     public ProductRepositoryImpl(JpaProductRepository productRepository) {
@@ -18,7 +20,7 @@ public class ProductRepositoryImpl  implements ProductRepository {
     }
 
     @Override
-    public Product findAll(){
-        return jpaRepository.findAll().stream().findFirst().orElse(null);
+    public List<Product> findAll(){
+        return jpaRepository.findAll();
     }
 }

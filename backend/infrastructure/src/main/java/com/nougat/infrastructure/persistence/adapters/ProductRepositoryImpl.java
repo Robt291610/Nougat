@@ -3,9 +3,12 @@ package com.nougat.infrastructure.persistence.adapters;
 import com.nougat.domain.entities.Product;
 import com.nougat.domain.repository.ProductRepository;
 import com.nougat.infrastructure.persistence.repositories.JpaProductRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 public class ProductRepositoryImpl  implements ProductRepository {
@@ -27,7 +30,7 @@ public class ProductRepositoryImpl  implements ProductRepository {
     }
 
     @Override
-    public Product findById(String id){     //Fix
+    public Product findById(UUID id){     //Fix
         Product product = new Product();
         return product;
     }

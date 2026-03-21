@@ -16,13 +16,8 @@ public class CreateProductCommandHandler {
         this.repository = repository;
     }
 
-    public UUID handler(ProductSummaryDto dto) {
-        Product product = new Product();
-
-        GeneralMapper.DtoToProduct(dto);
-
-        repository.save(product);
-        return product.getId();
+    public void handler(ProductSummaryDto product) {
+        repository.save(GeneralMapper.dtoToProduct(product));
     }
 
 }

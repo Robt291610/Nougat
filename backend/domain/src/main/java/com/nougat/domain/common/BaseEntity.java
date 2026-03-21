@@ -1,5 +1,6 @@
 package com.nougat.domain.common;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
@@ -17,5 +18,6 @@ public abstract class BaseEntity {
     @Id
     @GeneratedValue
     @UuidGenerator
+    @Column(length = 36)
     private UUID id;
 }

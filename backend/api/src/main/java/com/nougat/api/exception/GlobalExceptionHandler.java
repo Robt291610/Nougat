@@ -1,4 +1,4 @@
-package com.nougat.api.exceptionhandler;
+package com.nougat.api.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

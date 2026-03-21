@@ -1,5 +1,6 @@
 package com.nougat.api.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,8 +16,22 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+
+    @Value("${security.enabled:true}")
+    private boolean securityEnabled;
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
+        //Just for test
+//        if (!securityEnabled) {
+//            http
+//                    .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
+//                    .csrf(csrf -> csrf.disable());
+//
+//            return http.build();
+//        }
+
         http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/public/**").permitAll()

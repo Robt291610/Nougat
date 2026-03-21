@@ -3,6 +3,8 @@ package com.nougat.domain.entities;
 import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -40,5 +42,6 @@ public class User extends BaseEntity {
 
     private boolean active;
 
+    @CreationTimestamp
     private LocalDateTime createdAt;
 }

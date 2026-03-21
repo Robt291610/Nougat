@@ -3,6 +3,8 @@ package com.nougat.domain.entities;
 import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -20,5 +22,7 @@ public class Inventory extends BaseEntity {
     private Product product;
 
     private Integer quantity;
+
+    @CreationTimestamp
     private LocalDateTime lastUpdated;
 }

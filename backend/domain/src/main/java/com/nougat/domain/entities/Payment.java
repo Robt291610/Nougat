@@ -3,6 +3,8 @@ package com.nougat.domain.entities;
 import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.time.LocalDateTime;
 
 enum PaymentMethod {
@@ -38,5 +40,7 @@ public class Payment extends BaseEntity {
     private PaymentStatus paymentStatus;
 
     private String transactionId;
+
+    @CreationTimestamp
     private LocalDateTime paymentDate;
 }

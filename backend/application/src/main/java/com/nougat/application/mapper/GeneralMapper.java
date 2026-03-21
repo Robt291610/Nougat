@@ -1,13 +1,15 @@
-package com.nougat.application.mappers;
+package com.nougat.application.mapper;
 
-import com.nougat.application.dto.dashboard.ProductSummaryDto;
+import com.nougat.application.dto.products.ProductSummaryDto;
+import com.nougat.application.dto.users.UserSummaryDTO;
 import com.nougat.domain.entities.Product;
-import org.hibernate.annotations.UuidGenerator;
+import com.nougat.domain.entities.User;
 import org.springframework.stereotype.Component;
 
+//a + 7
 @Component
 public class GeneralMapper {
-    //Products
+    // region ========== Products ==========
     public static Product dtoToProduct(ProductSummaryDto dto){
         Product product = new Product();
         product.setProductName(dto.getProductName());
@@ -24,7 +26,22 @@ public class GeneralMapper {
         dto.setPrice(product.getPrice());
         return dto;
     }
+    //endregion
 
-    //Clients
+    // region ========== Clients ==========
 
+    //endregion
+
+    // region ========== Users ==========
+    public User dtoToUser (UserSummaryDTO dto){
+        User user = new User();
+        user.setName(dto.getName());
+        user.setLastName(dto.getLastName());
+        user.setEmail(dto.getEmail());
+        user.setPasswordHash(dto.getPasswordHash());
+        user.setPhoneNumber(dto.getPhoneNumber());
+        return  user;
+    };
+
+    //endregion
 }

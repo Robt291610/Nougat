@@ -1,4 +1,4 @@
-package com.nougat.application.dto.dashboard;
+package com.nougat.application.dto.products;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

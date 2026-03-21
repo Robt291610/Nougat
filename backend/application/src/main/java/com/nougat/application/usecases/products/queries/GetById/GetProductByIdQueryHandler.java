@@ -1,12 +1,10 @@
 package com.nougat.application.usecases.products.queries.GetById;
 
-import com.nougat.application.dto.dashboard.ProductSummaryDto;
-import com.nougat.application.mappers.GeneralMapper;
+import com.nougat.application.dto.products.ProductSummaryDto;
+import com.nougat.application.mapper.GeneralMapper;
 import com.nougat.domain.entities.Product;
 import com.nougat.domain.repository.ProductRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.UUID;
 
 @Service
 public class GetProductByIdQueryHandler {

@@ -1,9 +1,8 @@
 package com.nougat.api.controllers;
 
-import com.nougat.application.dto.dashboard.ProductSummaryDto;
+import com.nougat.application.dto.products.ProductSummaryDto;
 import com.nougat.application.usecases.products.commands.CreateProductCommandHandler;
 import com.nougat.application.usecases.products.queries.GetAll.GetAllProductsQueryHandler;
-import com.nougat.domain.entities.Product;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;

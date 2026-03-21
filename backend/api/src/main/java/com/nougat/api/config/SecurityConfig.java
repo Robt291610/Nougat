@@ -19,19 +19,16 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        // Public endpoints
                         .requestMatchers("/public/**").permitAll()
-                        // Swagger UI - permit if you want it open
                         .requestMatchers(
                                 "/swagger-ui/**",
                                 "/swagger-ui.html",
                                 "/v3/api-docs/**"
                         ).permitAll()
-                        // Everything else requires auth
                         .anyRequest().authenticated()
                 )
-                .httpBasic(Customizer.withDefaults())   // or formLogin
-                .csrf(csrf -> csrf.disable());          // disable for REST APIs
+                .httpBasic(Customizer.withDefaults())
+                .csrf(csrf -> csrf.disable());
 
         return http.build();
     }

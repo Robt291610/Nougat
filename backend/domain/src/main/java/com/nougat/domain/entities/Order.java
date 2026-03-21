@@ -1,11 +1,18 @@
 package com.nougat.domain.entities;
 
 import com.nougat.domain.common.BaseEntity;
-import com.nougat.domain.constants.OrderStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+
+enum OrderStatus {
+    PENDING,
+    PAID,
+    SHIPPED,
+    DELIVERED,
+    CANCELLED
+}
 
 @Entity
 @Getter

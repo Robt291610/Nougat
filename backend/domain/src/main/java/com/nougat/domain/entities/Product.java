@@ -4,6 +4,8 @@ package com.nougat.domain.entities;
 import com.nougat.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -14,6 +16,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "products")
 @ToString(exclude = "categories")
 public class Product extends BaseEntity {
 
@@ -25,6 +28,7 @@ public class Product extends BaseEntity {
 
     private BigDecimal price;
 
+    @CreationTimestamp
     private LocalDateTime createdDate;
 
     @ManyToMany(fetch = FetchType.LAZY)

@@ -33,7 +33,7 @@ public class GeneralMapper {
     //endregion
 
     // region ========== Users ==========
-    public User dtoToUser (UserSummaryDTO dto){
+    public static User dtoToUser (UserSummaryDTO dto){
         User user = new User();
         user.setName(dto.getName());
         user.setLastName(dto.getLastName());

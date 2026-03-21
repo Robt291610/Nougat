@@ -11,26 +11,26 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/products")
-@Tag(name = "Products", description = "Product APIs")
+@Tag(name = "Products", description = "Product API")
 public class ProductController {
 
-    private final GetAllProductsQueryHandler getAllHandler;
-    private final CreateProductCommandHandler createHandler;
+    private final GetAllProductsQueryHandler getAll;
+    private final CreateProductCommandHandler create;
 
-    public ProductController(GetAllProductsQueryHandler getAllHandler, CreateProductCommandHandler createHandler) {
-        this.getAllHandler = getAllHandler;
-        this.createHandler = createHandler;
+    public ProductController(GetAllProductsQueryHandler getAll, CreateProductCommandHandler create) {
+        this.getAll = getAll;
+        this.create = create;
     }
 
     @GetMapping("all")
     @Operation(summary = "Get all products")
     public List<ProductSummaryDto> getAllProducts() {
-        return getAllHandler.handle();
+        return getAll.handle();
     }
 
     @PostMapping("register")
     @Operation(summary = "register a product")
     public void registerProduct(@RequestBody ProductSummaryDto product) {
-        createHandler.handler(product);
+        create.handler(product);
     }
 }

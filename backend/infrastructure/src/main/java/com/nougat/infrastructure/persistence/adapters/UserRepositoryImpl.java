@@ -6,6 +6,7 @@ import com.nougat.infrastructure.persistence.repositories.JpaUserRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
@@ -28,5 +29,10 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public void save(User user) {
         jpaUserRepository.save(user);
+    }
+
+    @Override
+    public Optional<User> findByEmail(String email) {
+        return jpaUserRepository.findByEmail(email);
     }
 }

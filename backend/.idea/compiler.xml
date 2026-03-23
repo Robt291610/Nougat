@@ -10,6 +10,7 @@
         <module name="api" />
         <module name="application" />
         <module name="infrastructure" />
+        <module name="authentication" />
       </profile>
       <profile name="Annotation profile for parent" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -29,6 +30,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api" options="-parameters" />
       <module name="application" options="-parameters" />
+      <module name="authentication" options="-parameters" />
       <module name="domain" options="-parameters" />
       <module name="infrastructure" options="-parameters" />
       <module name="text" options="-parameters" />

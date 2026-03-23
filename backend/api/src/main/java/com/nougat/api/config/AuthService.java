@@ -25,6 +25,7 @@ public class AuthService {
                 )
         );
         // If we reach here, credentials are valid
+        //implement cache control
         String token = jwtService.generateToken(request.username());
         return new LoginResponse(token);
     }

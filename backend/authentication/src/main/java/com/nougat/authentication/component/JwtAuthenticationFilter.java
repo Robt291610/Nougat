@@ -1,5 +1,6 @@
-package com.nougat.api.config;
+package com.nougat.authentication.component;
 
+import com.nougat.authentication.services.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

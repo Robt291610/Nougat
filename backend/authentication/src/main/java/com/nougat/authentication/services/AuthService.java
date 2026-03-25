@@ -1,7 +1,8 @@
-package com.nougat.api.config;
+package com.nougat.authentication.services;
 
-import com.nougat.api.dto.request.LoginRequest;
-import com.nougat.api.dto.response.LoginResponse;
+import com.nougat.authentication.dto.request.LoginRequest;
+import com.nougat.authentication.dto.response.LoginResponse;
+import com.nougat.domain.repository.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;

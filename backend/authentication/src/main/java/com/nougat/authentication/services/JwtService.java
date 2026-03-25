@@ -1,4 +1,4 @@
-package com.nougat.api.config;
+package com.nougat.authentication.services;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -32,6 +32,7 @@ public class JwtService {
                 .compact();
     }
 
+    //not used yet
     //throw an exception and use tri catch
     public String extractUsername(String token) {
         return Jwts.parser()

@@ -1,8 +1,8 @@
-package com.nougat.api.auth;
+package com.nougat.authentication.auth;
 
-import com.nougat.api.config.AuthService;
-import com.nougat.api.dto.request.LoginRequest;
-import com.nougat.api.dto.response.LoginResponse;
+import com.nougat.authentication.dto.request.LoginRequest;
+import com.nougat.authentication.dto.response.LoginResponse;
+import com.nougat.authentication.services.AuthService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

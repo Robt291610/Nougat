@@ -1,5 +1,6 @@
 package com.nougat.authentication.component;
 
+import com.nougat.authentication.services.CustomUserDetailsService;
 import com.nougat.authentication.services.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -19,9 +20,9 @@ import java.io.IOException;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
-    private final UserDetailsService userDetailsService;
+    private final CustomUserDetailsService userDetailsService;
 
-    public JwtAuthenticationFilter(JwtService jwtService , UserDetailsService userDetailsService){
+    public JwtAuthenticationFilter(JwtService jwtService , CustomUserDetailsService userDetailsService){
         this.jwtService = jwtService;
         this.userDetailsService = userDetailsService;
     }

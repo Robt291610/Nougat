@@ -1,7 +1,10 @@
 package com.nougat.authentication.services;
 
+import com.nougat.authentication.mapper.UserMapper;
+import com.nougat.domain.entities.User;
 import com.nougat.domain.repository.UserRepository;
 import com.nougat.infrastructure.persistence.adapters.UserRepositoryImpl;
+import com.nougat.infrastructure.persistence.repositories.JpaUserRepository;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,40 +19,17 @@ import java.util.List;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-//    private final UserRepository userRepository;
-//
-//    public CustomUserDetailsService(UserRepository userRepository) {
-//        this.userRepository = userRepository;
-//    }
+    private final JpaUserRepository userRepository;
+    private final UserMapper userMapper;
+
+    public CustomUserDetailsService(JpaUserRepository userRepository, UserMapper userMapper) {
+        this.userRepository = userRepository;
+        this.userMapper = userMapper;
+    }
 
     @Override
-    public UserDetails loadUserByUsername(String username) {
-        UserDetails u = new UserDetails() {
-            @Override
-            public Collection<? extends GrantedAuthority> getAuthorities() {
-                return List.of();
-            }
-
-            @Override
-            public @Nullable String getPassword() {
-                return "";
-            }
-
-            @Override
-            public String getUsername() {
-                return "";
-            }
-        };
-//        var user = userRepository.findByEmail(username)
-//                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-//
-//        return new org.springframework.security.core.userdetails.User(
-//                user.getEmail(),
-//                user.getPasswordHash(),
-//                user.getRoles().stream()
-//                        .map(role -> new SimpleGrantedAuthority("ROLE_" + role.getRoleName()))
-//                        .toList()
-//        );
-        return u;
+    public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
+        return userMapper.userToDetails(userRepository.findByName(name)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found: " + name)));
     }
 }

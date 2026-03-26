@@ -3,6 +3,8 @@ package com.nougat.infrastructure.persistence.adapters;
 import com.nougat.domain.entities.User;
 import com.nougat.domain.repository.UserRepository;
 import com.nougat.infrastructure.persistence.repositories.JpaUserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -28,6 +30,8 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void save(User user) {
+        Logger l = LoggerFactory.getLogger(UserRepositoryImpl.class);
+        l.info("Saving user: " + user.toString());
         jpaUserRepository.save(user);
     }
 

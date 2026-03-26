@@ -14,7 +14,8 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users")
+@ToString
+@Table(name = "user")
 public class User extends BaseEntity {
 
     @Column(nullable = false, length = 100)
@@ -29,7 +30,7 @@ public class User extends BaseEntity {
     @Column(nullable = false, length = 255)
     private String passwordHash;
 
-    @Column(length = 20)
+    @Column(length = 20, nullable = true)
     private String phoneNumber;
 
     @ManyToMany

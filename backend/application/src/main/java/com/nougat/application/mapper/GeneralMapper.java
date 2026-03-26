@@ -9,6 +9,9 @@ import org.springframework.stereotype.Component;
 //a + 7
 @Component
 public class GeneralMapper {
+
+
+
     // region ========== Products ==========
     public static Product dtoToProduct(ProductSummaryDto dto){
         Product product = new Product();
@@ -29,6 +32,16 @@ public class GeneralMapper {
     //endregion
 
     // region ========== Clients ==========
+    public static UserSummaryDTO userToDto(User user){
+        UserSummaryDTO dto = new UserSummaryDTO();
+        dto.setName(user.getName());
+        dto.setLastName(user.getLastName());
+        dto.setEmail(user.getEmail());
+        dto.setPasswordHash(user.getPasswordHash());
+        dto.setPhoneNumber(user.getPhoneNumber());
+        return dto;
+    }
+
 
     //endregion
 

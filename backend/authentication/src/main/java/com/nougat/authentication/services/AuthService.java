@@ -1,10 +1,9 @@
 package com.nougat.authentication.services;
 
-import com.nougat.application.dto.users.ByEmail;
+import com.nougat.application.dto.login.LogInDto;
 import com.nougat.application.dto.users.UserSummaryDTO;
 import com.nougat.application.usecases.users.commands.CreateUserCommand;
 import com.nougat.application.usecases.users.queries.GetUserByEmail.GetUserByEmailQuery;
-import com.nougat.authentication.dto.request.LoginRequest;
 import com.nougat.authentication.dto.response.LoginResponse;
 import com.nougat.authentication.dto.response.RegisterResponse;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,9 +29,9 @@ public class AuthService {
         this.getUserByEmailQuery = getUserByEmailQuery;
     }
 
-    public LoginResponse login(LoginRequest request) {
+    public LoginResponse login(LogInDto request) {
         try {
-            String token = jwtService.generateToken(request.email());
+            String token = jwtService.generateToken(request.getEmail());
             return new LoginResponse(token);
         }
         catch (Exception e) {

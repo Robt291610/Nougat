@@ -1,5 +1,4 @@
-package com.nougat.api.config;
-
+package com.nougat.authentication.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -15,8 +14,8 @@ public class OpenApiConfig {
     public OpenAPI openAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Nougat API")
-                        .description("Online Store API")
+                        .title("Nougat AUTH API")
+                        .description("Online Store AUTH API")
                         .version("1.0.0"))
                 .addSecurityItem(new SecurityRequirement()
                         .addList("Bearer Authentication"))

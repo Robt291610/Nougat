@@ -1,6 +1,8 @@
 package com.nougat.application.mapper;
 
+import com.nougat.application.dto.common.ById;
 import com.nougat.application.dto.products.ProductSummaryDto;
+import com.nougat.application.dto.users.ByEmail;
 import com.nougat.application.dto.users.UserSummaryDTO;
 import com.nougat.domain.entities.Product;
 import com.nougat.domain.entities.User;
@@ -58,11 +60,12 @@ public class GeneralMapper {
         return  user;
     };
 
-//    public static UserSummaryDTO dtoToUser (Optional<User> userEmail){
-//        UserSummaryDTO user = new UserSummaryDTO();
-//        user.set(dto.getName());
-//        return  user;
-//    };
+    public static String userToEmail (Optional<User> userEmail){
+        String user;
+        User unwrappedUser = userEmail.get();
+        user = unwrappedUser.getEmail();
+        return  user;
+    };
 
     //endregion
 }

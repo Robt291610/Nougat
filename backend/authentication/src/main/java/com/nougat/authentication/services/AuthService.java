@@ -36,9 +36,6 @@ public class AuthService {
 
     public LoginResponse login(LoginRequest request) {
         try {
-//            if( request.email() == null){
-//                return new LoginResponse("The user cannot be null");
-//            }
             String token = jwtService.generateToken(request.email());
             return new LoginResponse(token);
         }

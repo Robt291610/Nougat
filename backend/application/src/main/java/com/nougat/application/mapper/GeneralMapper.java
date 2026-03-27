@@ -6,6 +6,8 @@ import com.nougat.domain.entities.Product;
 import com.nougat.domain.entities.User;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 //a + 7
 @Component
 public class GeneralMapper {
@@ -55,6 +57,12 @@ public class GeneralMapper {
         user.setPhoneNumber(dto.getPhoneNumber());
         return  user;
     };
+
+//    public static UserSummaryDTO dtoToUser (Optional<User> userEmail){
+//        UserSummaryDTO user = new UserSummaryDTO();
+//        user.set(dto.getName());
+//        return  user;
+//    };
 
     //endregion
 }

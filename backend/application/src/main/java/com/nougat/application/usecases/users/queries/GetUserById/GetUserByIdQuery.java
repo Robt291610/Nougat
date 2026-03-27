@@ -1,4 +1,4 @@
-package com.nougat.application.usecases.users.queries;
+package com.nougat.application.usecases.users.queries.GetUserById;
 
 import lombok.Getter;
 import lombok.Setter;

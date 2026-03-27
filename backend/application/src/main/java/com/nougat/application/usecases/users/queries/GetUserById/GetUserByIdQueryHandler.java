@@ -1,12 +1,8 @@
-package com.nougat.application.usecases.users.queries;
+package com.nougat.application.usecases.users.queries.GetUserById;
 
-import com.nougat.application.dto.products.ProductSummaryDto;
 import com.nougat.application.dto.users.UserSummaryDTO;
 import com.nougat.application.mapper.GeneralMapper;
-import com.nougat.application.usecases.products.queries.GetById.GetProductByIdQuery;
-import com.nougat.domain.entities.Product;
 import com.nougat.domain.entities.User;
-import com.nougat.domain.repository.ProductRepository;
 import com.nougat.domain.repository.UserRepository;
 import org.springframework.stereotype.Service;
 

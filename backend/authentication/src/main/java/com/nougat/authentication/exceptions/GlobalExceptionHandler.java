@@ -1,5 +1,6 @@
 package com.nougat.authentication.exceptions;
 
+import com.nougat.application.dto.error.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;

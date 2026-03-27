@@ -1,8 +1,8 @@
 package com.nougat.api.controllers;
 
 import com.nougat.application.dto.products.ProductSummaryDto;
-import com.nougat.application.usecases.products.commands.CreateProductCommandHandler;
-import com.nougat.application.usecases.products.queries.GetAll.GetAllProductsQueryHandler;
+import com.nougat.application.usecases.products.commands.CreateProductCommand;
+import com.nougat.application.usecases.products.queries.GetAll.GetAllProductsQuery;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
@@ -14,10 +14,10 @@ import java.util.List;
 @Tag(name = "Products", description = "Product API")
 public class ProductController {
 
-    private final GetAllProductsQueryHandler getAll;
-    private final CreateProductCommandHandler create;
+    private final GetAllProductsQuery getAll;
+    private final CreateProductCommand create;
 
-    public ProductController(GetAllProductsQueryHandler getAll, CreateProductCommandHandler create) {
+    public ProductController(GetAllProductsQuery getAll, CreateProductCommand create) {
         this.getAll = getAll;
         this.create = create;
     }

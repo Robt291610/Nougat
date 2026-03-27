@@ -7,10 +7,6 @@ import com.nougat.application.usecases.users.queries.GetUserByEmail.GetUserByEma
 import com.nougat.authentication.dto.request.LoginRequest;
 import com.nougat.authentication.dto.response.LoginResponse;
 import com.nougat.authentication.dto.response.RegisterResponse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -46,9 +42,6 @@ public class AuthService {
 
     public RegisterResponse register(UserSummaryDTO request) {
         try {
-            if(getUserByEmailQuery.handle(request.getEmail()) != null){
-                return new RegisterResponse("The user already exists");
-            }
             request.setPasswordHash(passwordEncoder.encode(request.getPasswordHash()));
             command.handler(request);
             return new RegisterResponse("User registered successfully");

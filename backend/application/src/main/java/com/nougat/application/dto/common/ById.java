@@ -7,5 +7,5 @@ import java.util.UUID;
 @Getter
 @Setter
 public class ById {
-    UUID Id;
+    private UUID Id;
 }

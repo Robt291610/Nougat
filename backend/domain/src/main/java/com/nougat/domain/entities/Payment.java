@@ -1,11 +1,25 @@
 package com.nougat.domain.entities;
 
 import com.nougat.domain.common.BaseEntity;
-import com.nougat.domain.constants.PaymentMethod;
-import com.nougat.domain.constants.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.time.LocalDateTime;
+
+enum PaymentMethod {
+    CREDIT_CARD,
+    DEBIT_CARD,
+    PAYPAL,
+    CASH_ON_DELIVERY
+}
+
+enum PaymentStatus {
+    PENDING,
+    COMPLETED,
+    FAILED,
+    REFUNDED
+}
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,5 +40,7 @@ public class Payment extends BaseEntity {
     private PaymentStatus paymentStatus;
 
     private String transactionId;
+
+    @CreationTimestamp
     private LocalDateTime paymentDate;
 }

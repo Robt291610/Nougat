@@ -18,7 +18,7 @@ public class Review extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", nullable = false)
-    private Products product;
+    private Product product;
 
     private Byte rating;
 

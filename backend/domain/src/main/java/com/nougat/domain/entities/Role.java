@@ -14,6 +14,10 @@ import java.util.Set;
 @Entity
 public class Role extends BaseEntity {
 
+    public Role(String roleName, String roleDescription) {
+        this.roleName = roleName;
+        this.roleDescription = roleDescription;
+    }
 
     private String roleName;
     private String roleDescription;

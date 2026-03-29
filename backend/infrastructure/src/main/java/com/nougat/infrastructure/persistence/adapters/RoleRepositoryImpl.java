@@ -1,12 +1,12 @@
 package com.nougat.infrastructure.persistence.adapters;
 
 import com.nougat.domain.entities.Role;
-import com.nougat.domain.repository.RoleRepository;
+import com.nougat.domain.repository.IRoleRepository;
 import com.nougat.infrastructure.persistence.repositories.JpaRoleRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class RoleRepositoryImpl implements RoleRepository {
+public class RoleRepositoryImpl implements IRoleRepository {
 
     public RoleRepositoryImpl(JpaRoleRepository jpaRoleRepository) { this.jpaRoleRepository = jpaRoleRepository; }
 

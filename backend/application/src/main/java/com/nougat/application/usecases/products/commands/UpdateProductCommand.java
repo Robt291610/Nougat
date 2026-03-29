@@ -6,15 +6,14 @@ import com.nougat.domain.repository.IProductRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CreateProductCommand {
+public class UpdateProductCommand {
     private final IProductRepository repository;
 
-    public CreateProductCommand(IProductRepository repository) {
+    public UpdateProductCommand(IProductRepository repository) {
         this.repository = repository;
     }
 
     public void handler(ProductSummaryDto product) {
-        repository.save(GeneralMapper.dtoToProduct(product));
+        repository.update(GeneralMapper.dtoToProduct(product));
     }
-
 }

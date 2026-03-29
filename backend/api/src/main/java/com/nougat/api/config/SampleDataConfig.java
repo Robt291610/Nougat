@@ -1,22 +1,21 @@
 package com.nougat.api.config;
 
 import com.nougat.domain.entities.Role;
-import com.nougat.domain.repository.RoleRepository;
-import com.nougat.domain.repository.UserRepository;
+import com.nougat.domain.repository.IRoleRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class SampleDataConfig {
-    RoleRepository roleRepository;
+    IRoleRepository roleRepository;
 
-    SampleDataConfig(RoleRepository roleRepository) {
+    SampleDataConfig(IRoleRepository roleRepository) {
         this.roleRepository = roleRepository;
     }
 
     @Bean
-    public CommandLineRunner initRoles(RoleRepository roleRepository) {
+    public CommandLineRunner initRoles(IRoleRepository roleRepository) {
         return args -> {
 
             if (roleRepository.count() == 0) {

@@ -5,8 +5,9 @@ import com.nougat.domain.entities.Product;
 import java.util.List;
 import java.util.UUID;
 
-public interface ProductRepository {
+public interface IProductRepository {
     public void save(Product product);
     public List<Product> findAll();
     public Product findById(UUID id);
+    public void update(Product product);
 }

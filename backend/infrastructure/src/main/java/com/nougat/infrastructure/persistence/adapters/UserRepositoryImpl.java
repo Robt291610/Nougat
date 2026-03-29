@@ -1,7 +1,7 @@
 package com.nougat.infrastructure.persistence.adapters;
 
 import com.nougat.domain.entities.User;
-import com.nougat.domain.repository.UserRepository;
+import com.nougat.domain.repository.IUserRepository;
 import com.nougat.infrastructure.persistence.repositories.JpaUserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public class UserRepositoryImpl implements UserRepository {
+public class UserRepositoryImpl implements IUserRepository {
 
     JpaUserRepository jpaUserRepository;
     public UserRepositoryImpl(JpaUserRepository jpaUserRepository) { this.jpaUserRepository = jpaUserRepository; }

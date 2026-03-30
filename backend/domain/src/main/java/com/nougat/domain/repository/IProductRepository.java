@@ -9,5 +9,4 @@ public interface IProductRepository {
     public void save(Product product);
     public List<Product> findAll();
     public Product findById(UUID id);
-    public void update(Product product);
 }

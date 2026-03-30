@@ -14,6 +14,6 @@ public class UpdateProductCommand {
     }
 
     public void handler(ProductSummaryDto product) {
-        repository.update(GeneralMapper.dtoToProduct(product));
+        repository.save(GeneralMapper.dtoToProduct(product));
     }
 }

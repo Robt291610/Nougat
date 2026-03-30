@@ -1,6 +1,5 @@
 package com.nougat.api;
 
-import com.nougat.api.controllers.UserController;
 import com.nougat.application.usecases.users.commands.CreateUserCommand;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

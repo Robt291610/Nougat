@@ -32,9 +32,4 @@ public class ProductRepositoryImpl  implements IProductRepository {
         Product product = new Product();
         return product;
     }
-
-    @Override
-    public void update(Product product) {
-        jpaRepository.updateProduct(product);
-    }
 }

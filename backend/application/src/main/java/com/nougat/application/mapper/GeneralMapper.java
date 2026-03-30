@@ -1,9 +1,11 @@
 package com.nougat.application.mapper;
 
+import com.nougat.application.dto.address.AddressSummaryDto;
 import com.nougat.application.dto.common.ById;
 import com.nougat.application.dto.products.ProductSummaryDto;
 import com.nougat.application.dto.users.ByEmail;
 import com.nougat.application.dto.users.UserSummaryDTO;
+import com.nougat.domain.entities.Address;
 import com.nougat.domain.entities.Product;
 import com.nougat.domain.entities.User;
 import org.springframework.stereotype.Component;
@@ -67,5 +69,18 @@ public class GeneralMapper {
         return  user;
     };
 
+    //endregion
+
+    //region ========== Address ==========
+    public static Address dtoToAddress (AddressSummaryDto dto){
+        Address address = new Address();
+        address.setStreet(dto.getStreet());
+        address.setCity(dto.getCity());
+        address.setState(dto.getState());
+        address.setCountry(dto.getCountry());
+        address.setZipCode(dto.getZipCode());
+        address.setDefault(dto.isDefault());
+        return  address;
+    };
     //endregion
 }

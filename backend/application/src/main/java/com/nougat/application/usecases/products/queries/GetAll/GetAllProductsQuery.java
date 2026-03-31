@@ -14,7 +14,6 @@ import java.util.List;
 @Service
 public class GetAllProductsQuery {
     private final IProductRepository repository;
-    private Logger log = LoggerFactory.getLogger(GetAllProductsQuery.class);
 
     public GetAllProductsQuery(IProductRepository repository) {
         this.repository = repository;

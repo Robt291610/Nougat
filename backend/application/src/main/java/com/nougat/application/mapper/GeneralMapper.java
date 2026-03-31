@@ -38,15 +38,7 @@ public class GeneralMapper {
     //endregion
 
     // region ========== Clients ==========
-    public static UserSummaryDTO userToDto(User user){
-        UserSummaryDTO dto = new UserSummaryDTO();
-        dto.setName(user.getName());
-        dto.setLastName(user.getLastName());
-        dto.setEmail(user.getEmail());
-        dto.setPasswordHash(user.getPasswordHash());
-        dto.setPhoneNumber(user.getPhoneNumber());
-        return dto;
-    }
+
 
 
     //endregion
@@ -68,6 +60,16 @@ public class GeneralMapper {
         user = unwrappedUser.getEmail();
         return  user;
     };
+
+    public static UserSummaryDTO userToDto(User user){
+        UserSummaryDTO dto = new UserSummaryDTO();
+        dto.setName(user.getName());
+        dto.setLastName(user.getLastName());
+        dto.setEmail(user.getEmail());
+        dto.setPasswordHash(user.getPasswordHash());
+        dto.setPhoneNumber(user.getPhoneNumber());
+        return dto;
+    }
 
     //endregion
 

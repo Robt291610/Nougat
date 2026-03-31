@@ -12,6 +12,7 @@ public interface IUserRepository {
     public void save(User user);
     public Optional<User> findByEmail(String email);
     public Optional<User> findByUsername(String username);
+    public List<User> findAllUsers();
 
 
 }

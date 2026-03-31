@@ -44,4 +44,9 @@ public class UserRepositoryImpl implements IUserRepository {
     public Optional<User> findByUsername(String name) {
         return jpaUserRepository.findByName(name);
     }
+
+    @Override
+    public List<User> findAllUsers(){
+        return jpaUserRepository.findAll();
+    };
 }

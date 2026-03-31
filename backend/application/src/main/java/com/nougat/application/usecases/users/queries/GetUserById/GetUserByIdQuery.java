@@ -5,9 +5,10 @@ import com.nougat.application.dto.users.UserSummaryDTO;
 import com.nougat.application.mapper.GeneralMapper;
 import com.nougat.domain.entities.User;
 import com.nougat.domain.repository.IUserRepository;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
 import java.util.UUID;
+import org.slf4j.Logger;
 
 @Service
 public class GetUserByIdQuery {
@@ -19,6 +20,8 @@ public class GetUserByIdQuery {
 
     public UserSummaryDTO handle(UUID id) {
         User user = repository.findById(id);
+        Logger l = LoggerFactory.getLogger(GetUserByIdQuery.class);
+        l.info("User: " + user.toString());
 
         return GeneralMapper.userToDto(user);
     }

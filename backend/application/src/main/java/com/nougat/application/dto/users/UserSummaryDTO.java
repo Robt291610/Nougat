@@ -13,12 +13,9 @@ import java.util.UUID;
 @Setter
 @ToString
 public class UserSummaryDTO {
+    private UUID id;
     private String name;
     private String lastName;
-
-    @NotBlank
-    @Email
-
     private String email;
     private String passwordHash;
     private String phoneNumber;

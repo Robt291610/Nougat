@@ -19,7 +19,7 @@ enum OrderStatus {
 @Entity
 @Getter
 @Setter
-@Table(name = "order")
+@Table(name = "orders")
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(exclude = {"user", "address"})

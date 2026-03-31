@@ -63,6 +63,7 @@ public class GeneralMapper {
 
     public static UserSummaryDTO userToDto(User user){
         UserSummaryDTO dto = new UserSummaryDTO();
+        dto.setId(user.getId());
         dto.setName(user.getName());
         dto.setLastName(user.getLastName());
         dto.setEmail(user.getEmail());

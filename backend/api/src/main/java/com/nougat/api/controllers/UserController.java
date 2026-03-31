@@ -2,6 +2,7 @@ package com.nougat.api.controllers;
 
 import com.nougat.application.dto.users.UserSummaryDTO;
 import com.nougat.application.usecases.users.queries.GetUserById.GetUserByIdQuery;
+import com.nougat.application.usecases.users.queries.findAllUsers.FindAllUsersQuery;
 import com.nougat.domain.entities.User;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,10 +18,11 @@ import java.util.UUID;
 public class UserController {
 
     private final GetUserByIdQuery query;
+    private final FindAllUsersQuery findAllUsersQuery;
 
-
-    public UserController(GetUserByIdQuery query) {
+    public UserController(GetUserByIdQuery query, FindAllUsersQuery findAllUsersQuery) {
         this.query = query;
+        this.findAllUsersQuery = findAllUsersQuery;
     }
 
     @GetMapping("/{id}")
@@ -32,6 +34,6 @@ public class UserController {
     @GetMapping
     @Operation(summary = "Get all users")
     public List<UserSummaryDTO> getUsers() {
-
+        return findAllUsersQuery.handle();
     }
 }

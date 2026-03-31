@@ -7,14 +7,12 @@ import com.nougat.domain.repository.IUserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
-public class findAllUsersQuery {
+public class FindAllUsersQuery {
     private final IUserRepository repository;
 
-    public findAllUsersQuery(IUserRepository repository) {
+    public FindAllUsersQuery(IUserRepository repository) {
         this.repository = repository;
     }
 

@@ -72,8 +72,9 @@ public class GeneralMapper {
     //endregion
 
     //region ========== Address ==========
-    public static Address dtoToAddress (AddressSummaryDto dto){
+    public static Address dtoToAddress (AddressSummaryDto dto, User foundUser){
         Address address = new Address();
+        address.setUser(foundUser);
         address.setStreet(dto.getStreet());
         address.setCity(dto.getCity());
         address.setState(dto.getState());

@@ -1,9 +1,6 @@
 package com.nougat.domain.common;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.UuidGenerator;
@@ -16,8 +13,7 @@ import java.util.UUID;
 public abstract class BaseEntity {
 
     @Id
-    @GeneratedValue
-    @UuidGenerator
-    @Column(length = 36)
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(length = 36, columnDefinition = "VARCHAR(36)")
     private UUID id;
 }

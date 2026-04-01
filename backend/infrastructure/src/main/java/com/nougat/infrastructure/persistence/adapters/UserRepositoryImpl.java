@@ -25,13 +25,14 @@ public class UserRepositoryImpl implements IUserRepository {
 
     @Override
     public User findById(UUID id) {
+        Logger l = LoggerFactory.getLogger(this.getClass());
+        l.info("findById" + id);
         return jpaUserRepository.findById(id).orElse(null);
+
     }
 
     @Override
     public void save(User user) {
-        Logger l = LoggerFactory.getLogger(UserRepositoryImpl.class);
-        l.info("Saving user: " + user.toString());
         jpaUserRepository.save(user);
     }
 

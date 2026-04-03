@@ -25,10 +25,8 @@ public class UserRepositoryImpl implements IUserRepository {
 
     @Override
     public User findById(UUID id) {
-        Logger l = LoggerFactory.getLogger(this.getClass());
-        l.info("findById" + id);
-        return jpaUserRepository.findById(id).orElse(null);
-
+        return jpaUserRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found: " + id));
     }
 
     @Override

@@ -43,10 +43,7 @@ public class AuthService {
 
     public RegisterResponse register(UserSummaryDTO request) {
         try {
-            Logger l = LoggerFactory.getLogger(AuthService.class);
             request.setPasswordHash(passwordEncoder.encode(request.getPasswordHash()));
-            l.info("Password hash: " + request.getPasswordHash());
-
             command.handler(request);
             return new RegisterResponse("User registered successfully");
         }

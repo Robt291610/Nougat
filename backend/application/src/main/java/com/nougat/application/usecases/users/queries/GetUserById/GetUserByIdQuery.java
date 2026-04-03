@@ -19,13 +19,7 @@ public class GetUserByIdQuery {
     }
 
     public UserSummaryDTO handle(UUID id) {
-        Logger l = LoggerFactory.getLogger(GetUserByIdQuery.class);
         User user = repository.findById(id);
-
-//        if (user == null) {
-//            l.info("User with id " + id + " not found");
-//        }
-
         return GeneralMapper.userToDto(user);
     }
 }

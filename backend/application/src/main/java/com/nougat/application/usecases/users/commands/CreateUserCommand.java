@@ -18,10 +18,6 @@ public class CreateUserCommand {
 
     public void handler(UserSummaryDTO user) {
         User userRegister = GeneralMapper.dtoToUser(user);
-        Logger l = LoggerFactory.getLogger(CreateUserCommand.class);
-
-        l.info("User: " + userRegister.toString());
-
         userRegister.setActive(true);
         userRepository.save(userRegister);
     }

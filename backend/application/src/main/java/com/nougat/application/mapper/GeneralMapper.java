@@ -2,14 +2,17 @@ package com.nougat.application.mapper;
 
 import com.nougat.application.dto.address.AddressSummaryDto;
 import com.nougat.application.dto.common.ById;
+import com.nougat.application.dto.inventory.InventorySummaryDTO;
 import com.nougat.application.dto.products.ProductSummaryDto;
 import com.nougat.application.dto.users.ByEmail;
 import com.nougat.application.dto.users.UserSummaryDTO;
 import com.nougat.domain.entities.Address;
+import com.nougat.domain.entities.Inventory;
 import com.nougat.domain.entities.Product;
 import com.nougat.domain.entities.User;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 //a + 7
@@ -86,5 +89,14 @@ public class GeneralMapper {
         address.setDefault(dto.isDefault());
         return  address;
     };
+    //endregion
+
+    //region ========== Inventory ==========
+    public static InventorySummaryDTO inventoryToDto(List<Inventory> list){
+        InventorySummaryDTO inventory = new InventorySummaryDTO();
+        inventory.setId(list.get(0).getId());
+        inventory.setQuantity(list.get(0).getQuantity());
+        return  inventory;
+    }
     //endregion
 }

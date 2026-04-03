@@ -7,5 +7,5 @@ import java.util.UUID;
 
 public interface IInventoryRepository {
     public Inventory findById(UUID id);
-    public List<Inventory> findAll(UUID id);
+    public List<Inventory> findAll();
 }

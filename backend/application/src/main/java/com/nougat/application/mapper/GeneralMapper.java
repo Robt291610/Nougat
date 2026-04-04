@@ -12,6 +12,7 @@ import com.nougat.domain.entities.Product;
 import com.nougat.domain.entities.User;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -92,10 +93,11 @@ public class GeneralMapper {
     //endregion
 
     //region ========== Inventory ==========
-    public static InventorySummaryDTO inventoryToDto(List<Inventory> list){
-        InventorySummaryDTO inventory = new InventorySummaryDTO();
-        inventory.setId(list.get(0).getId());
-        inventory.setQuantity(list.get(0).getQuantity());
+    public static List<InventorySummaryDTO> inventoryToDto(List<Inventory> list){
+        List<InventorySummaryDTO> inventory = new ArrayList<>();
+        inventory.get(0).setId(list.get(0).getId());
+        inventory.get(1).setProductId(list.get(1).getProduct());
+        inventory.get(2).setQuantity(list.get(2).getQuantity());
         return  inventory;
     }
     //endregion

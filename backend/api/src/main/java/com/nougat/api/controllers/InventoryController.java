@@ -24,4 +24,6 @@ public class InventoryController {
     public List<InventorySummaryDTO> getAll(){
         return getAll.handle();
     }
+
+
 }

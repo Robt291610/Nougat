@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 //a + 7
 @Component
@@ -105,6 +106,14 @@ public class GeneralMapper {
         }
 
         return result;
+    }
+
+    public static InventorySummaryDTO inventoryToDto(Inventory inventory) {
+        InventorySummaryDTO dto = new InventorySummaryDTO();
+        dto.setId(inventory.getId());
+        dto.setProductId(inventory.getProduct().getId());
+        dto.setQuantity(inventory.getQuantity());
+        return dto;
     }
     //endregion
 }

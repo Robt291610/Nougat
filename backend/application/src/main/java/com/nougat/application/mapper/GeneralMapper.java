@@ -93,12 +93,18 @@ public class GeneralMapper {
     //endregion
 
     //region ========== Inventory ==========
-    public static List<InventorySummaryDTO> inventoryToDto(List<Inventory> list){
-        List<InventorySummaryDTO> inventory = new ArrayList<>();
-        inventory.get(0).setId(list.get(0).getId());
-        inventory.get(1).setProductId(list.get(1).getProduct());
-        inventory.get(2).setQuantity(list.get(2).getQuantity());
-        return  inventory;
+    public static List<InventorySummaryDTO> inventoryToDto(List<Inventory> list) {
+        List<InventorySummaryDTO> result = new ArrayList<>();
+
+        for (Inventory inventory : list) {
+            InventorySummaryDTO dto = new InventorySummaryDTO();
+            dto.setId(inventory.getId());
+            dto.setProductId(inventory.getProduct().getId());
+            dto.setQuantity(inventory.getQuantity());
+            result.add(dto);  // ← add to list, not get
+        }
+
+        return result;
     }
     //endregion
 }

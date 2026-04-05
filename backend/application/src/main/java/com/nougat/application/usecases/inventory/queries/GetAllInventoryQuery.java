@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class GetAllQuery {
+public class GetAllInventoryQuery {
     private final IInventoryRepository repository;
 
-    public GetAllQuery(IInventoryRepository repository) {
+    public GetAllInventoryQuery(IInventoryRepository repository) {
         this.repository = repository;
     }
 

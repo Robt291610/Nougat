@@ -10,6 +10,6 @@ import java.util.UUID;
 @Setter
 public class InventorySummaryDTO {
     private UUID id;
-    private Product productId;
+    private UUID productId;
     private Integer quantity;
 }
